@@ -1,1 +1,1 @@
-from example.settings.base import *
+from example.settings.base import * #noqa
