@@ -25,13 +25,16 @@ DEBUG = True
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 INSTALLED_APPS_FIRST_PARTY = [
-    "apps.base",
-    "apps.books",
+    "apps.apis.apps.ApisConfig",
+    "apps.base.apps.BaseConfig",
+    "apps.books.apps.BooksConfig",
 ]
 
 
 INSTALLED_APPS_THIRD_PARTY = [
     "django_linear_migrations",
+    "rest_framework",
+    "debug_toolbar",
 ]
 
 
@@ -50,6 +53,11 @@ INSTALLED_APPS = (
 )
 
 
+INTERNAL_IPS = [
+    "127.0.0.1"
+]
+
+
 LANGUAGE_CODE = "en-us"
 
 
@@ -61,6 +69,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    #Third party
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 
