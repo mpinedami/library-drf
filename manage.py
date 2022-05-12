@@ -14,11 +14,9 @@ def main():
         command = "help"
 
     if command == "test":
-        default = "example.settings.test"
-    elif command == "local":
-        default = "example.settings.development"
+        default = "core.settings.test"
     else:
-        default = "example.settings.production"
+        default = "core.settings.development"
 
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", default)
     try:

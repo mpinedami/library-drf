@@ -8,8 +8,25 @@ authors = ["Maynor Pineda <mpineda@mediainteractiva.net>"]
 python = "^3.10"
 Django = "^4.0.4"
 djangorestframework = "^3.13.1"
+factory-boy = "^3.2.1"
 
 [tool.poetry.dev-dependencies]
+django-linear-migrations = "^2.4.0"
+django-debug-toolbar = "^3.4.0"
+isort = "^5.10.1"
+black = "^22.3.0"
+rich = "^12.4.1"
+ipython = "^8.3.0"
+flake8 = "^4.0.1"
+pylint = "^2.13.8"
+pywatchman = "^1.4.1"
+
+[tool.black]
+target-version = ['py38']
+line-lenth = 79
+
+[tool.isort]
+profile = "black"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
