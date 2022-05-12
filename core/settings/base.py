@@ -1,11 +1,11 @@
-###### SETUP ######
+# SETUP
 
 
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-###### DJANGO CORE SETTINGS ######
+# DJANGO CORE SETTINGS
 
 
 ALLOWED_HOSTS = []
@@ -24,10 +24,15 @@ DEBUG = True
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-INSTALLED_APPS_FIRST_PARTY = ["apps.base", "apps.books",]
+INSTALLED_APPS_FIRST_PARTY = [
+    "apps.base",
+    "apps.books",
+]
 
 
-INSTALLED_APPS_THIRD_PARTY = ["django_linear_migrations",]
+INSTALLED_APPS_THIRD_PARTY = [
+    "django_linear_migrations",
+]
 
 
 INSTALLED_APPS_CONTRIB = [
@@ -94,12 +99,12 @@ USE_TZ = True
 WSGI_APPLICATION = "core.wsgi.application"
 
 
-###### DJANGO CONTRIB SETTINGS ######
+# DJANGO CONTRIB SETTINGS
 
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",  # noqa
     },
     {
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
@@ -113,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-###### PROJECT SETTINS ######
+# PROJECT SETTINS
 
 
 STATIC_URL = "static/"

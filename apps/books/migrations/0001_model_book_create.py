@@ -7,23 +7,30 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Book',
+            name="Book",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('title', models.CharField(max_length=250)),
-                ('subtitle', models.CharField(max_length=250)),
-                ('author', models.CharField(max_length=100)),
-                ('isbn', models.CharField(max_length=13)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                ("title", models.CharField(max_length=250)),
+                ("subtitle", models.CharField(max_length=250)),
+                ("author", models.CharField(max_length=100)),
+                ("isbn", models.CharField(max_length=13)),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
         ),
     ]
