@@ -1,7 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse
 
-from apps.books.models import Book
 from apps.books.factories import BookFactory
 
 

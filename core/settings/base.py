@@ -53,9 +53,7 @@ INSTALLED_APPS = (
 )
 
 
-INTERNAL_IPS = [
-    "127.0.0.1"
-]
+INTERNAL_IPS = ["127.0.0.1"]
 
 
 LANGUAGE_CODE = "en-us"
@@ -69,7 +67,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    #Third party
+    # Third party
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 

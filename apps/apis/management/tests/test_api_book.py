@@ -1,4 +1,3 @@
-from urllib import response
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
@@ -6,13 +5,14 @@ from rest_framework.test import APITestCase
 from apps.books.factories import BookFactory
 from apps.books.models import Book
 
+
 class APITests(APITestCase):
     @classmethod
     def setUpTestData(cls):
         cls.book = BookFactory.create()
-        
+
     def test_api_listview(self):
-        response = self.client.get(reverse('book_list'))
+        response = self.client.get(reverse("book_list"))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(Book.objects.count(), 1)
         self.assertContains(response, self.book)
