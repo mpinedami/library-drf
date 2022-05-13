@@ -14,10 +14,10 @@ repos:
       - id: check-added-large-files
       - id: check-case-conflict
       - id: check-merge-conflict
-      #- id: check-json
       - id: check-toml
       - id: check-xml
       - id: check-yaml
+      - id: check-json
 
   # Pyupgrade convierte sintaxis antigua a una sintaxis moderna
   - repo: https://github.com/asottile/pyupgrade
@@ -46,14 +46,6 @@ repos:
       - id: djhtml
         args:
           - --tabwidth=2
-
-  # ESlint para una mejor practica en archivos javascript, vue, jsx, etc.
-  - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: "v8.14.0" # Use the sha / tag you want to point at
-    hooks:
-      - id: eslint
-        args:
-          - --fix #Bandera para corregir automaticamente los errores
 
   # Prettier formateador de codigo para archivos javascript, css, html, etc.
   - repo: https://github.com/pre-commit/mirrors-prettier

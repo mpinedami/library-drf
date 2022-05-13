@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # DJANGO CORE SETTINGS
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".herokuapp.com", "localhost", "127.0.0.1"]
 
 
 DATABASES = {
@@ -32,9 +32,10 @@ INSTALLED_APPS_FIRST_PARTY = [
 
 
 INSTALLED_APPS_THIRD_PARTY = [
+    "debug_toolbar",
     "django_linear_migrations",
     "rest_framework",
-    "debug_toolbar",
+    "whitenoise.runserver_nostatic",
 ]
 
 
@@ -69,6 +70,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     # Third party
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 
@@ -129,4 +131,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # PROJECT SETTINS
 
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+
+
+STATICFILES_DIRS = [BASE_DIR / "static"]
+
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
